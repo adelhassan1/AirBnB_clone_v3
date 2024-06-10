@@ -2,6 +2,7 @@
 
 from models import storage
 from api.v1.views import app_views
+from flask import jsonify
 
 """
     endpoint that retrieves the number of each objects by type
@@ -15,4 +16,4 @@ def get_status():
             states: storage.count('State'),
             users: storage.count('User')
             }
-    return json(stats), 200
+    return jsonify(stats), 200
